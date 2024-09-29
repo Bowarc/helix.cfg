@@ -22,10 +22,10 @@ display-messages = true
 
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name"]
 center = []
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "│"
+left = ["mode", "spinner", "file-name"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -37,11 +37,22 @@ mode.select = "SELECT"
 ######################################### 
 
 [keys.normal]
+# 
 # Shared with insert mode 
+# 
 "F1" = "toggle_line_comments"
 "F2" = ":format"
 C-s = ":write"
 
+#
+# Shared with select mode
+# 
+"C-up" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ] # Move current selection up
+"C-down" = [ "extend_to_line_bounds", "delete_selection", "paste_after"] # Move current selection down
+
+# 
+# normal binds
+# 
 tab = ":buffer-next"
 S-tab = ":buffer-previous"
 
@@ -49,15 +60,7 @@ S-tab = ":buffer-previous"
 S-up = "copy_selection_on_prev_line"
 S-down = "copy_selection_on_next_line"
 
-C-c = ["extend_to_line_bounds", "yank"] # Copy whole current line
-
-# Move current selection up or down
-"C-up" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
-"C-down" = [ "extend_to_line_bounds", "delete_selection", "paste_after"]
-
-# Copy the current selection up or down
-# "S-up" = [ "extend_to_line_bounds", "yank", "paste_after" ]
-# "S-down" = [ "extend_to_line_bounds", "yank", "paste_before" ]
+C-c = ["extend_to_line_bounds", "yank", ":clipboard-yank"] # Copy whole current line
 
 [keys.normal.space]
 x = ":buffer-close"
@@ -65,8 +68,20 @@ x = ":buffer-close"
 # v = "paste_after"
 
 [keys.insert]
+#
 # Shared with normal mode
+# 
 "F1" = "toggle_line_comments"
 "F2" = ":format"
 C-s = ":write"
+C-c = ["extend_to_line_bounds", "yank", ":clipboard-yank"] # Copy whole current line
+C-ret = ["normal_mode","open_below"]
 
+[keys.select]
+y = [":clipboard-yank", "yank"]
+
+# 
+# Shared with normal mode
+# 
+"C-up" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ] # Move current selection up
+"C-down" = [ "extend_to_line_bounds", "delete_selection", "paste_after"] # Move current selection down
