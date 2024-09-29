@@ -1,0 +1,5 @@
+You can revert / play with cursor teleportation using ctrl+o/i
+
+You can search a command using <space>+?
+
+you can split window using the <space>+w menu
