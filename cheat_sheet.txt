@@ -1,5 +1,7 @@
-You can revert / play with cursor teleportation using ctrl+o/i
+You can revert / play with cursor jumps using ctrl+o/i and use <space>+j to see the list of recent jumps
 
 You can search a command using <space>+?
 
 you can split window using the <space>+w menu
+
+Multi cursors with shift+up/down, reset with "," or double space
