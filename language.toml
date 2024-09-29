@@ -3,9 +3,12 @@ name = "rust"
 
 [language.config]
 hostInfo = "rust"
-locale = "en-GB" 
+locale = "en-GB"
 
-[language.config.javascript.inlayHints]
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
+[language.config.rust.inlayHints]
 includeInlayEnumMemberValueHints = true
 includeInlayFunctionLikeReturnTypeHints = true
 includeInlayFunctionParameterTypeHints = true

@@ -4,6 +4,9 @@ theme = "ayu_dark"
 line-number = "relative"
 mouse = false
 bufferline = "multiple"
+cursorline = true
+rulers = [120]
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,10 +18,55 @@ hidden = false
 
 [editor.lsp]
 display-inlay-hints = true
+display-messages = true
 
 
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+######################################### 
+######################################### 
+####             KEYBINDS            #### 
+######################################### 
+######################################### 
 
 [keys.normal]
+# Shared with insert mode 
+"F1" = "toggle_line_comments"
+"F2" = ":format"
+C-s = ":write"
+
 tab = ":buffer-next"
 S-tab = ":buffer-previous"
+
+# Create a cursor above / below
+S-up = "copy_selection_on_prev_line"
+S-down = "copy_selection_on_next_line"
+
+C-c = ["extend_to_line_bounds", "yank"] # Copy whole current line
+
+# Move current selection up or down
+"C-up" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+"C-down" = [ "extend_to_line_bounds", "delete_selection", "paste_after"]
+
+# Copy the current selection up or down
+# "S-up" = [ "extend_to_line_bounds", "yank", "paste_after" ]
+# "S-down" = [ "extend_to_line_bounds", "yank", "paste_before" ]
+
+[keys.normal.space]
+x = ":buffer-close"
+# c = ["extend_to_line_bounds", "yank"]
+# v = "paste_after"
+
+[keys.insert]
+# Shared with normal mode
+"F1" = "toggle_line_comments"
+"F2" = ":format"
+C-s = ":write"
 
