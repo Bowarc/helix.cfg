@@ -1,0 +1,16 @@
+[[language]]
+name = "rust"
+
+[language.config]
+hostInfo = "rust"
+locale = "en-GB" 
+
+[language.config.javascript.inlayHints]
+includeInlayEnumMemberValueHints = true
+includeInlayFunctionLikeReturnTypeHints = true
+includeInlayFunctionParameterTypeHints = true
+includeInlayParameterNameHints = "all"                       # 'none' | 'literals' | 'all';
+includeInlayParameterNameHintsWhenArgumentMatchesName = true
+includeInlayPropertyDeclarationTypeHints = true
+includeInlayVariableTypeHints = true
+
