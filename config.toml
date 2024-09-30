@@ -8,6 +8,12 @@ cursorline = true
 rulers = [120]
 true-color = true
 
+[editor.auto-save]
+focus-lost = true # Save on focus lost my beloved
+
+[editor.indent-guides]
+render = true
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -63,9 +69,14 @@ S-down = "copy_selection_on_next_line"
 
 C-c = ["extend_to_line_bounds", "yank", ":clipboard-yank"] # Copy whole current line
 
+S-c = "no_op" # Disable default create cursor down behavior
+
 [keys.normal.space]
 x = ":buffer-close"
 space = "keep_primary_selection"
+c = "no_op" # Disable default comment bind
+l = { s = ":run-shell-command ls"} # Display current dir on <space> > l > s
+
 # c = ["extend_to_line_bounds", "yank"]
 # v = "paste_after"
 
