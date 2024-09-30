@@ -5,3 +5,6 @@ You can search a command using <space>+?
 you can split window using the <space>+w menu
 
 Multi cursors with shift+up/down, reset with "," or double space
+
+
+The command ":toggle lsp.display-inlay-hints" would be nice to have a quick access to
