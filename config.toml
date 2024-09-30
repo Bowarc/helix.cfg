@@ -29,7 +29,14 @@ display-messages = true
 
 [editor.statusline]
 center = []
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
 separator = "│"
 left = ["mode", "spinner", "file-name"]
 mode.normal = "NORMAL"
@@ -49,53 +56,102 @@ mode.select = "SELECT"
 "F1" = "toggle_line_comments"
 "F2" = ":format"
 C-s = ":write"
+C-z = "undo" # Might be overkill
+C-y = "redo" # Might be overkill
+C-c = [
+  "extend_to_line_bounds",
+  "yank",
+  ":clipboard-yank",
+] # Copy whole current line
+C-g = "code_action"
+C-r = "symbol_picker"
+C-left = "move_prev_word_start"
+C-right = "move_next_word_start"
 
-#
+####
 # Shared with select mode
-# 
-"C-up" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ] # Move current selection up
-"C-down" = [ "extend_to_line_bounds", "delete_selection", "paste_after"] # Move current selection down
+####
+"C-up" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+] # Move current selection up
+"C-down" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "paste_after",
+] # Move current selection down
 
-# 
-# normal binds
-# 
+####
+# Normal keybinds
+####
 tab = ":buffer-next"
 S-tab = ":buffer-previous"
-esc = ["collapse_selection", "keep_primary_selection"]
+esc = [
+  "collapse_selection",
+  "keep_primary_selection",
+] # QOL clear selection etc..
 
 # Create a cursor above / below
-S-up = "copy_selection_on_prev_line"
-S-down = "copy_selection_on_next_line"
+S-up = "copy_selection_on_prev_line"   # Create a new cursor above the current one
+S-down = "copy_selection_on_next_line" # Create a new cursor below the current one
 
-C-c = ["extend_to_line_bounds", "yank", ":clipboard-yank"] # Copy whole current line
 
 S-c = "no_op" # Disable default create cursor down behavior
 
 [keys.normal.space]
 x = ":buffer-close"
 space = "keep_primary_selection"
-c = "no_op" # Disable default comment bind
-l = { s = ":run-shell-command ls"} # Display current dir on <space> > l > s
-
-# c = ["extend_to_line_bounds", "yank"]
-# v = "paste_after"
+c = "no_op"                         # Disable default comment bind
+s = "no_op"                         # Disable default symbol_picker bind
+l = { s = ":run-shell-command ls" } # Display current dir on <space> > l > s
 
 [keys.insert]
-#
+####
 # Shared with normal mode
-# 
+####
 "F1" = "toggle_line_comments"
 "F2" = ":format"
 C-s = ":write"
-C-c = ["extend_to_line_bounds", "yank", ":clipboard-yank"] # Copy whole current line
+C-z = "undo" # Might be overkill
+C-y = "redo" # Might be overkill
+C-c = [
+  "extend_to_line_bounds",
+  "yank",
+  ":clipboard-yank",
+] # Copy whole current line
+C-g = "code_action"
+C-r = "symbol_picker"
+C-left = "move_prev_word_start"
+C-right = "move_next_word_start"
 
-C-ret = ["normal_mode","open_below"]
+####
+# Insert keybinds
+####
+C-ret = ["normal_mode", "open_below"]
+C-S-ret = ["normal_mode", "open_above"] # Not 100% sure about this one lol
+
 
 [keys.select]
-y = [":clipboard-yank", "yank"]
-
-# 
+####
 # Shared with normal mode
-# 
-"C-up" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ] # Move current selection up
-"C-down" = [ "extend_to_line_bounds", "delete_selection", "paste_after"] # Move current selection down
+####
+"C-up" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+] # Move current selection up
+"C-down" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "paste_after",
+] # Move current selection down
+C-left = "move_prev_word_start"
+C-right = "move_next_word_start"
+
+####
+# Select keybinds
+####
+y = [":clipboard-yank", "yank"]
