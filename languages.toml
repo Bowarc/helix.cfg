@@ -6,6 +6,7 @@
 
 [[language]]
 name = "rust"
+scope = "source.rust"
 
 [language-server.rust-analyzer.config]
 hostInfo = "rust"
@@ -14,7 +15,7 @@ check.command = "clippy"
 
 [language-server.rust-analyzer.config.inlayHints]
 closureReturnTypeHints.enable = "always"
-lifetimeElisionHints = { enable = "always", useParameterNames = true }
+lifetimeElisionHints = { enable = "skip_trivial", useParameterNames = true }
 # includeInlayEnumMemberValueHints = true
 
 [language-server.rust-analyzer.config.imports]
@@ -33,6 +34,17 @@ granularity = { enforce = true, group = "crate" }
 # [language-server.rust-analyzer.config.inlayHints.lifetimeElisionHints]
 # enable = true
 # useParameterNames = true
+# [language.auto-pairs]
+# '<' = '>'
+# "'" = { close = "'", except_prefixes = ["<", "&"] }
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+"'" = "'"
 
 ######################################### 
 ######################################### 

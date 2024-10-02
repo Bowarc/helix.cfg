@@ -52,7 +52,7 @@ mode.select = "SELECT"
 
 [keys.normal]
 # 
-# Shared with insert mode 
+# Global
 # 
 "F1" = "toggle_line_comments"
 "F2" = ":format"
@@ -64,30 +64,32 @@ C-c = [
   "yank",
   ":clipboard-yank",
 ] # Copy whole current line
-C-g = "code_action"
-C-r = "symbol_picker"
-C-left = "move_prev_word_start"
-C-right = "move_next_word_start"
+C-g = "code_action" # LSP code action
+C-r = "symbol_picker" # LSP file symbols
+C-d = "goto_definition" # LSP symbol definition + remove page default down
+C-u = "no_op" # Remove default page down
+C-left = "move_prev_word_start" # Fast movement
+C-right = "move_next_word_start" # Fast movement
+C-j = "page_cursor_half_down" # Fast movement
+C-k = "page_cursor_half_up" # Fast movement
+S-left = "extend_prev_word_start" # Cool shift select
+S-right = "extend_next_word_end" # Cool shift select
+####
+# Shared with insert mode
+####
+C-backspace = ["move_prev_word_start", "delete_selection"] # Delete prev word
+C-del = ["move_next_word_start", "delete_selection"]       # Delete next word
+C-up = "page_cursor_half_up"                               # Fast movement
+C-down = "page_cursor_half_down"                           # Fast movement
 
 ####
 # Shared with select mode
 ####
-"C-up" = [
-  "extend_to_line_bounds",
-  "delete_selection",
-  "move_line_up",
-  "paste_before",
-] # Move current selection up
-"C-down" = [
-  "extend_to_line_bounds",
-  "delete_selection",
-  "paste_after",
-] # Move current selection down
 y = [":clipboard-yank", "yank"] # Make clipboard global 
 
 
 ####
-# Normal keybinds
+# Modal
 ####
 tab = ":buffer-next" # QOL switch between opened buffers
 S-tab = ":buffer-previous" # QOL switch between opened buffers
@@ -106,10 +108,10 @@ S-c = "no_op" # Disable default create cursor down behavior
 x = ":buffer-close"              # Close current buffer 
 X = ":buffer-close!"             # Force buffer close (sometime new buffers can be anoying)
 space = "keep_primary_selection" # ?
-c = "no_op"                      # Disable default comment bind
 s = "no_op"                      # Disable default symbol_picker bind
 up = "jump_view_up"              # Quick window swap #2
 down = "jump_view_down"          # Quick window swap #2
+c = "no_op"                      # Disable default comment bind
 left = "jump_view_left"          # Quick window swap #2
 right = "jump_view_right"        # Quick window swap #2
 
@@ -133,11 +135,11 @@ l = { s = ":run-shell-command eza -Tls type --git-ignore --git --color never", r
 
 [keys.insert]
 ####
-# Shared with normal mode
-####
-"F1" = "toggle_line_comments" # St bind im used to
-"F2" = ":format" # St bind im used to
-C-s = ":write" # CTRL S addict
+# Global
+#### 
+"F1" = "toggle_line_comments"
+"F2" = ":format"
+C-s = ":write"
 C-z = "undo" # Might be overkill
 C-y = "redo" # Might be overkill
 C-c = [
@@ -145,13 +147,27 @@ C-c = [
   "yank",
   ":clipboard-yank",
 ] # Copy whole current line
-C-g = "code_action"
-C-r = "symbol_picker"
-C-left = "move_prev_word_start"
-C-right = "move_next_word_start"
+C-g = "code_action" # LSP code action
+C-r = "symbol_picker" # LSP file symbols
+C-d = "goto_definition" # LSP symbol definition + remove page default down
+C-u = "no_op" # Remove default page down
+C-left = "move_prev_word_start" # Fast movement
+C-right = "move_next_word_start" # Fast movement
+C-j = "page_cursor_half_down" # Fast movement
+C-k = "page_cursor_half_up" # Fast movement
+S-left = "extend_prev_word_start"
+S-right = "extend_next_word_end"
 
 ####
-# Insert keybinds
+# Shared with normal mode
+####
+C-backspace = ["move_prev_word_start", "delete_selection"] # Delete prev word
+C-del = ["move_next_word_start", "delete_selection"]       # Delete next word
+C-up = "page_cursor_half_up"                               # Fast movement
+C-down = "page_cursor_half_down"                           # Fast movement
+
+####
+# Modal
 ####
 C-ret = [
   "normal_mode",
@@ -165,23 +181,47 @@ C-S-ret = [
 
 [keys.select]
 ####
+# Global
+#### 
+"F1" = "toggle_line_comments"
+"F2" = ":format"
+C-s = ":write"
+C-z = "undo" # Might be overkill
+C-y = "redo" # Might be overkill
+C-c = [
+  "extend_to_line_bounds",
+  "yank",
+  ":clipboard-yank",
+] # Copy whole current line
+C-g = "code_action" # LSP code action
+C-r = "symbol_picker" # LSP file symbols
+C-d = "goto_definition" # LSP symbol definition + remove page default down
+C-u = "no_op" # Remove default page down
+C-left = "move_prev_word_start" # Fast movement
+C-right = "move_next_word_start" # Fast movement
+C-j = "page_cursor_half_down" # Fast movement
+C-k = "page_cursor_half_up" # Fast movement
+S-left = "extend_prev_word_start"
+S-right = "extend_next_word_end"
+
+####
 # Shared with normal mode
+####
+y = [":clipboard-yank", "yank"] # Make clipboard global 
+
+####
+# Select keybinds
 ####
 "C-up" = [
   "extend_to_line_bounds",
   "delete_selection",
   "move_line_up",
   "paste_before",
+  "select_mode",
 ] # Move current selection up
 "C-down" = [
   "extend_to_line_bounds",
   "delete_selection",
   "paste_after",
+  "select_mode",
 ] # Move current selection down
-y = [":clipboard-yank", "yank"] # Make clipboard global 
-C-left = "move_prev_word_start"
-C-right = "move_next_word_start"
-
-####
-# Select keybinds
-####

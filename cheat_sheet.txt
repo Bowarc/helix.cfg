@@ -6,5 +6,6 @@ you can split window using the <space>+w menu
 
 Multi cursors with shift+up/down, reset with "," or double space
 
+The command ":toggle lsp.display-inlay-hints" would be nice to have a quick access to // auto completion helps a lot, idk if this is nessesary
 
-The command ":toggle lsp.display-inlay-hints" would be nice to have a quick access to
+The goto menu is really cool, use it more (+ you can use it in select mode)
