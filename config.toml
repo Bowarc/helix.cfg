@@ -57,8 +57,6 @@ mode.select = "SELECT"
 "F1" = "toggle_line_comments"
 "F2" = ":format"
 C-s = ":write"
-C-z = "undo" # Might be overkill
-C-y = "redo" # Might be overkill
 C-c = [
   "extend_to_line_bounds",
   "yank",
@@ -140,8 +138,6 @@ l = { s = ":run-shell-command eza -Tls type --git-ignore --git --color never", r
 "F1" = "toggle_line_comments"
 "F2" = ":format"
 C-s = ":write"
-C-z = "undo" # Might be overkill
-C-y = "redo" # Might be overkill
 C-c = [
   "extend_to_line_bounds",
   "yank",
@@ -186,8 +182,6 @@ C-S-ret = [
 "F1" = "toggle_line_comments"
 "F2" = ":format"
 C-s = ":write"
-C-z = "undo" # Might be overkill
-C-y = "redo" # Might be overkill
 C-c = [
   "extend_to_line_bounds",
   "yank",
