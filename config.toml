@@ -78,16 +78,16 @@ S-right = "extend_next_word_end" # Cool shift select
 ####
 # Shared with insert mode
 ####
-C-backspace = ["move_prev_word_start", "delete_selection"] # Delete prev word
-C-del = ["move_next_word_start", "delete_selection"]       # Delete next word
-C-up = "page_cursor_half_up"                               # Fast movement
-C-down = "page_cursor_half_down"                           # Fast movement
+C-backspace = ["delete_word_backward"] # Delete prev word
+C-del = ["delete_word_forward"]        # Delete next word
+C-up = "page_cursor_half_up"           # Fast movement
+C-down = "page_cursor_half_down"       # Fast movement
 
 ####
 # Shared with select mode
 ####
 y = [":clipboard-yank", "yank"] # Make clipboard global 
-
+p = ":clipboard-paste-after"
 
 ####
 # Modal
@@ -162,10 +162,10 @@ S-right = "extend_next_word_end" # Cool shift select
 ####
 # Shared with normal mode
 ####
-C-backspace = ["move_prev_word_start", "delete_selection"] # Delete prev word
-C-del = ["move_next_word_start", "delete_selection"]       # Delete next word
-C-up = "page_cursor_half_up"                               # Fast movement
-C-down = "page_cursor_half_down"                           # Fast movement
+C-backspace = ["delete_word_backward"] # Delete prev word
+C-del = ["delete_word_forward"]        # Delete next word
+C-up = "page_cursor_half_up"           # Fast movement
+C-down = "page_cursor_half_down"       # Fast movement
 
 ####
 # Modal
@@ -209,6 +209,7 @@ S-right = "extend_next_word_end" # Cool shift select
 # Shared with normal mode
 ####
 y = [":clipboard-yank", "yank"] # Make clipboard global 
+p = ":clipboard-paste-after"
 
 ####
 # Select keybinds
