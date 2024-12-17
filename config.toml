@@ -10,6 +10,7 @@ true-color = true
 color-modes = true
 shell = ["pwsh", "-NoProfile", "-c"]
 idle-timeout = 0
+default-line-ending = 'lf'
 
 [editor.auto-save]
 focus-lost = true # Save on focus lost my beloved
@@ -90,6 +91,7 @@ C-down = "page_cursor_half_down"       # Fast movement
 ####
 y = [":clipboard-yank", "yank"] # Make clipboard global 
 p = ":clipboard-paste-after"
+X = "extend_line_up"
 
 ####
 # Modal
@@ -212,6 +214,7 @@ S-right = "extend_next_word_end" # Cool shift select
 ####
 y = [":clipboard-yank", "yank"] # Make clipboard global 
 p = ":clipboard-paste-after"
+X = "extend_line_up"
 
 ####
 # Select keybinds
