@@ -8,7 +8,7 @@ cursorline = true
 rulers = [120]
 true-color = true
 color-modes = true
-shell = ["pwsh", "-NoProfile", "-c"]
+shell = ["fish", "--no-config", "-c"]
 idle-timeout = 0
 default-line-ending = 'lf'
 
