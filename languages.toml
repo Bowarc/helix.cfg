@@ -3,7 +3,7 @@
 ####               RUST              #### 
 ######################################### 
 ######################################### 
-
+# rustup component add rust-analyzer
 [[language]]
 name = "rust"
 scope = "source.rust"
@@ -22,22 +22,6 @@ lifetimeElisionHints = { enable = "skip_trivial", useParameterNames = true }
 [language-server.rust-analyzer.config.imports]
 granularity = { enforce = true, group = "crate" }
 
-# includeInlayFunctionLikeReturnTypeHints = true
-# includeInlayFunctionParameterTypeHints = true
-# includeInlayParameterNameHints = "all"                       # 'none' | 'literals' | 'all';
-# includeInlayParameterNameHintsWhenArgumentMatchesName = true
-# includeInlayPropertyDeclarationTypeHints = true
-# includeInlayVariableTypeHints = true
-
-# expressionAdjustmentHints = { enable = true, mode = "postfix" }
-# genericParameterHints = { type = { enable = true }, lifetime = { enable = true } }
-
-# [language-server.rust-analyzer.config.inlayHints.lifetimeElisionHints]
-# enable = true
-# useParameterNames = true
-# [language.auto-pairs]
-# '<' = '>'
-# "'" = { close = "'", except_prefixes = ["<", "&"] }
 [language.auto-pairs]
 '(' = ')'
 '{' = '}'
@@ -45,15 +29,48 @@ granularity = { enforce = true, group = "crate" }
 '"' = '"'
 # '`' = '`'
 '<' = '>'
+# "'" = { close = "'", except_prefixes = ["<", "&"] }
 # "'" = "'"
+
+######################################### 
+######################################### 
+####        Rust crates version      #### 
+######################################### 
+######################################### 
+# https://blog.katona.me/2025/01/12/Adding-crates-io-version-check-to-Helix-editor/
+#
+# cargo install --git https://github.com/MathiasPius/crates-lsp.git --rev 53fb3b8d58c43ea799fdbc1fd28fa5db3f01b01a
+# cp -r /usr/<lib or lib64>/helix/runtime/queries/toml ~/.config/helix/runtime/queries/crates
+[[language]]
+name = "crates"
+scope = "source.toml"
+injection-regex = "toml"
+file-types = [{ glob = "Cargo.toml" }]
+comment-token = "#"
+language-servers = ["crates-lsp"]
+grammar = "toml"
+indent = { tab-width = 2, unit = "  " }
+diagnostic-severity = "Info"
+
+[language-server.crates-lsp]
+command = "crates-lsp"
+
+######################################### 
+######################################### 
+####               TOML              #### 
+######################################### 
+######################################### 
+# cargo install taplo-cli --locked
+[[language]]
+name = "toml"
+auto-format = true
+formatter = { command = "taplo", args = ["fmt", "-"] }
 
 ######################################### 
 ######################################### 
 ####              PYTHON             #### 
 ######################################### 
 ######################################### 
-
-
 [[language]]
 name = "python"
 language-servers = ["pylsp", "ruff", "pylint"]
@@ -81,15 +98,3 @@ args = ["server"]
 enabled = true
 command = "pylint"
 # args = ["server"]
-
-
-######################################### 
-######################################### 
-####               TOML              #### 
-######################################### 
-######################################### 
-
-[[language]]
-name = "toml"
-auto-format = true
-formatter = { command = "taplo", args = ["fmt", "-"] }
