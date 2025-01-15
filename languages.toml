@@ -60,7 +60,7 @@ command = "crates-lsp"
 ####               TOML              #### 
 ######################################### 
 ######################################### 
-# cargo install taplo-cli --locked
+# cargo install taplo-cli --locked --features lsp
 [[language]]
 name = "toml"
 auto-format = true
