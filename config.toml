@@ -54,7 +54,6 @@ mode.select = "SELECT"
 ######################################### 
 
 [keys.normal]
-
 # 
 # Global
 # 
@@ -69,8 +68,10 @@ C-x = [
 ] # Copy to yank & system clipboard & delete
 C-g = "code_action" # LSP code action
 C-r = "symbol_picker" # LSP file symbols
-C-d = "goto_definition" # LSP symbol definition + remove page default down
-C-u = "no_op" # Remove default page down
+# C-d = "goto_definition" # LSP symbol definition + remove page default down
+# Removed in favor of the default gd
+C-d = "no_op" # Remove default page down
+C-u = "no_op" # Remove default page up
 C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
 C-j = "page_cursor_half_down" # Fast movement
@@ -140,9 +141,9 @@ l = { s = ":run-shell-command eza -Tls type --git-ignore --git --color never", r
 
 [keys.insert]
 
-####
+# 
 # Global
-#### 
+# 
 "F1" = "toggle_line_comments" # Sublime text keybinds im used to
 "F2" = ":format" # Sublime text keybinds im used to
 C-s = ":write"
@@ -154,8 +155,10 @@ C-x = [
 ] # Copy to yank & system clipboard & delete
 C-g = "code_action" # LSP code action
 C-r = "symbol_picker" # LSP file symbols
-C-d = "goto_definition" # LSP symbol definition + remove page default down
-C-u = "no_op" # Remove default page down
+# C-d = "goto_definition" # LSP symbol definition + remove page default down
+# Removed in favor of the default gd
+C-d = "no_op" # Remove default page down
+C-u = "no_op" # Remove default page up
 C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
 C-j = "page_cursor_half_down" # Fast movement
@@ -186,9 +189,9 @@ C-S-ret = [
 
 [keys.select]
 
-####
+# 
 # Global
-#### 
+# 
 "F1" = "toggle_line_comments" # Sublime text keybinds im used to
 "F2" = ":format" # Sublime text keybinds im used to
 C-s = ":write"
@@ -200,8 +203,10 @@ C-x = [
 ] # Copy to yank & system clipboard & delete
 C-g = "code_action" # LSP code action
 C-r = "symbol_picker" # LSP file symbols
-C-d = "goto_definition" # LSP symbol definition + remove page default down
-C-u = "no_op" # Remove default page down
+# C-d = "goto_definition" # LSP symbol definition + remove page default down
+# Removed in favor of the default gd
+C-d = "no_op" # Remove default page down
+C-u = "no_op" # Remove default page up
 C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
 C-j = "page_cursor_half_down" # Fast movement
