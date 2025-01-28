@@ -70,10 +70,12 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 ######################################### 
 ####              PYTHON             #### 
 ######################################### 
-######################################### 
+#########################################
+# pip install pylint
+# pip install "python-lsp-server[all]"
 [[language]]
 name = "python"
-language-servers = ["pylsp", "ruff", "pylint"]
+language-servers = ["pylsp"]
 formatter = { command = "black", args = ["-"] }
 # roots = [".git"]
 # workspace-lsp-roots = ["src/updater"]
