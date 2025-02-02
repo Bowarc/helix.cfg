@@ -139,6 +139,11 @@ l = { s = ":run-shell-command eza -Tls type --git-ignore --git --color never", r
   "delete_selection",
 ] } }
 
+[keys.normal.space.'w']
+j = "no_op"
+# h = "no_op"
+h = ":vsplit-new"
+
 [keys.insert]
 
 # 
