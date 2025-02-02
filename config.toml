@@ -1,4 +1,4 @@
-theme = "ayu_dark" # gruvbox_dark_hard, molokai, b_term16_dark, voxed, ayu_dark
+theme = "ayu_dark" # gruvbox_dark_hard, molokai, term16_dark, voxed, ayu_dark
 
 [editor]
 line-number = "relative"
@@ -34,15 +34,15 @@ display-messages = true
 [editor.statusline]
 center = []
 right = [
-  "diagnostics",
-  "selections",
+  "primary-selection-length",
   "position",
+  "position-percentage",
   "file-encoding",
   "file-line-ending",
   "file-type",
 ]
 separator = "│"
-left = ["mode", "spinner", "file-name"]
+left = ["mode", "spinner", "workspace-diagnostics", "diagnostics", "file-name"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
