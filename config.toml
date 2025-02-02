@@ -103,6 +103,7 @@ esc = [
   "collapse_selection",
   "keep_primary_selection",
 ] # QOL clear selection etc..
+"²" = "goto_word" # Jump to a two letter token
 
 # Create a cursor above / below
 S-up = "copy_selection_on_prev_line"   # Create a new cursor above the current one
