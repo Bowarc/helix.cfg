@@ -47,10 +47,16 @@ scope = "source.toml"
 injection-regex = "toml"
 file-types = [{ glob = "Cargo.toml" }]
 comment-token = "#"
-language-servers = ["crates-lsp"]
+language-servers = [
+  { name = "crates-lsp", except-features = [
+    "format",
+  ] },
+  "taplo",
+]
 grammar = "toml"
 indent = { tab-width = 2, unit = "  " }
 diagnostic-severity = "Info"
+formatter = { command = "taplo", args = ["fmt", "-"] }
 
 [language-server.crates-lsp]
 command = "crates-lsp"
