@@ -74,6 +74,8 @@ C-d = "no_op" # Remove default page down
 C-u = "no_op" # Remove default page up
 C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
+C-up = "page_cursor_half_up"           # Fast movement
+C-down = "page_cursor_half_down"       # Fast movement
 C-j = "page_cursor_half_down" # Fast movement
 C-k = "page_cursor_half_up" # Fast movement
 S-left = "extend_prev_word_start" # Cool shift select
@@ -84,8 +86,6 @@ S-right = "extend_next_word_end" # Cool shift select
 ####
 C-backspace = ["delete_word_backward"] # Delete prev word
 C-del = ["delete_word_forward"]        # Delete next word
-C-up = "page_cursor_half_up"           # Fast movement
-C-down = "page_cursor_half_down"       # Fast movement
 
 ####
 # Shared with select mode
@@ -167,18 +167,17 @@ C-d = "no_op" # Remove default page down
 C-u = "no_op" # Remove default page up
 C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
+C-up = "page_cursor_half_up"           # Fast movement
+C-down = "page_cursor_half_down"       # Fast movement
 C-j = "page_cursor_half_down" # Fast movement
 C-k = "page_cursor_half_up" # Fast movement
 S-left = "extend_prev_word_start" # Cool shift select
 S-right = "extend_next_word_end" # Cool shift select
-
 ####
 # Shared with normal mode
 ####
 C-backspace = ["delete_word_backward"] # Delete prev word
 C-del = ["delete_word_forward"]        # Delete next word
-C-up = "page_cursor_half_up"           # Fast movement
-C-down = "page_cursor_half_down"       # Fast movement
 
 ####
 # Modal
@@ -215,6 +214,8 @@ C-d = "no_op" # Remove default page down
 C-u = "no_op" # Remove default page up
 C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
+C-up = "page_cursor_half_up"           # Fast movement
+C-down = "page_cursor_half_down"       # Fast movement
 C-j = "page_cursor_half_down" # Fast movement
 C-k = "page_cursor_half_up" # Fast movement
 S-left = "extend_prev_word_start" # Cool shift select
@@ -230,14 +231,14 @@ X = "extend_line_up"
 ####
 # Select keybinds
 ####
-"C-up" = [
+"S-up" = [
   "extend_to_line_bounds",
   "delete_selection",
   "move_line_up",
   "paste_before",
   "select_mode",
 ] # Move current selection up
-"C-down" = [
+"S-down" = [
   "extend_to_line_bounds",
   "delete_selection",
   "paste_after",
