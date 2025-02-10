@@ -55,7 +55,7 @@ language-servers = [
 ]
 grammar = "toml"
 indent = { tab-width = 2, unit = "  " }
-diagnostic-severity = "Info"
+diagnostic-severity = "info"
 formatter = { command = "taplo", args = ["fmt", "-"] }
 
 [language-server.crates-lsp]
