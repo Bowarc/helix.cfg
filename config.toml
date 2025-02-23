@@ -26,6 +26,12 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+max-indent-retain = 30
+wrap-indicator = "↪"
+
 [editor.lsp]
 display-inlay-hints = true
 display-messages = true
@@ -70,16 +76,16 @@ C-g = "code_action" # LSP code action
 C-r = "symbol_picker" # LSP file symbols
 # C-d = "goto_definition" # LSP symbol definition + remove page default down
 # Removed in favor of the default gd
-C-d = "no_op" # Remove default page down
-C-u = "no_op" # Remove default page up
-C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
+C-d = "no_op"                                            # Remove default page down
+C-u = "no_op"                                            # Remove default page up
+C-left = ["move_prev_word_start", "collapse_selection"]  # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
-C-up = "page_cursor_half_up"           # Fast movement
-C-down = "page_cursor_half_down"       # Fast movement
-C-j = "page_cursor_half_down" # Fast movement
-C-k = "page_cursor_half_up" # Fast movement
-S-left = "extend_prev_word_start" # Cool shift select
-S-right = "extend_next_word_end" # Cool shift select
+C-up = "page_cursor_half_up"                             # Fast movement
+C-down = "page_cursor_half_down"                         # Fast movement
+C-j = "page_cursor_half_down"                            # Fast movement
+C-k = "page_cursor_half_up"                              # Fast movement
+S-left = "extend_prev_word_start"                        # Cool shift select
+S-right = "extend_next_word_end"                         # Cool shift select
 
 ####
 # Shared with insert mode
@@ -163,16 +169,16 @@ C-g = "code_action" # LSP code action
 C-r = "symbol_picker" # LSP file symbols
 # C-d = "goto_definition" # LSP symbol definition + remove page default down
 # Removed in favor of the default gd
-C-d = "no_op" # Remove default page down
-C-u = "no_op" # Remove default page up
-C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
+C-d = "no_op"                                            # Remove default page down
+C-u = "no_op"                                            # Remove default page up
+C-left = ["move_prev_word_start", "collapse_selection"]  # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
-C-up = "page_cursor_half_up"           # Fast movement
-C-down = "page_cursor_half_down"       # Fast movement
-C-j = "page_cursor_half_down" # Fast movement
-C-k = "page_cursor_half_up" # Fast movement
-S-left = "extend_prev_word_start" # Cool shift select
-S-right = "extend_next_word_end" # Cool shift select
+C-up = "page_cursor_half_up"                             # Fast movement
+C-down = "page_cursor_half_down"                         # Fast movement
+C-j = "page_cursor_half_down"                            # Fast movement
+C-k = "page_cursor_half_up"                              # Fast movement
+S-left = "extend_prev_word_start"                        # Cool shift select
+S-right = "extend_next_word_end"                         # Cool shift select
 ####
 # Shared with normal mode
 ####
@@ -210,16 +216,16 @@ C-g = "code_action" # LSP code action
 C-r = "symbol_picker" # LSP file symbols
 # C-d = "goto_definition" # LSP symbol definition + remove page default down
 # Removed in favor of the default gd
-C-d = "no_op" # Remove default page down
-C-u = "no_op" # Remove default page up
-C-left = ["move_prev_word_start", "collapse_selection"] # Fast movement
+C-d = "no_op"                                            # Remove default page down
+C-u = "no_op"                                            # Remove default page up
+C-left = ["move_prev_word_start", "collapse_selection"]  # Fast movement
 C-right = ["move_next_word_start", "collapse_selection"] # Fast movement
-C-up = "page_cursor_half_up"           # Fast movement
-C-down = "page_cursor_half_down"       # Fast movement
-C-j = "page_cursor_half_down" # Fast movement
-C-k = "page_cursor_half_up" # Fast movement
-S-left = "extend_prev_word_start" # Cool shift select
-S-right = "extend_next_word_end" # Cool shift select
+C-up = "page_cursor_half_up"                             # Fast movement
+C-down = "page_cursor_half_down"                         # Fast movement
+C-j = "page_cursor_half_down"                            # Fast movement
+C-k = "page_cursor_half_up"                              # Fast movement
+S-left = "extend_prev_word_start"                        # Cool shift select
+S-right = "extend_next_word_end"                         # Cool shift select
 
 ####
 # Shared with normal mode
