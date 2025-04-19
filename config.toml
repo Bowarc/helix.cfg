@@ -11,6 +11,7 @@ color-modes = true
 shell = ["fish", "--no-config", "-c"]
 idle-timeout = 0
 default-line-ending = 'lf'
+end-of-line-diagnostics = "hint"
 
 [editor.auto-save]
 focus-lost = true # Save on focus lost my beloved
@@ -36,6 +37,10 @@ wrap-indicator = "↪"
 display-inlay-hints = true
 display-messages = true
 
+[editor.inline-diagnostics]
+cursor-line = "info" # show warnings and errors on the cursorline inline
+other-lines = "info"
+prefix-len = 1
 
 [editor.statusline]
 center = []

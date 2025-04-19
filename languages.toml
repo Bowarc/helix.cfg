@@ -106,3 +106,13 @@ args = ["server"]
 enabled = true
 command = "pylint"
 # args = ["server"]
+
+
+######################################### 
+######################################### 
+####               CSS               #### 
+######################################### 
+#########################################
+# (optional) npm config set prefix "$HOME/.npm/node_modules"
+# npm i -g vscode-langservers-extracted
+# <Add the node_module path to $PATH
