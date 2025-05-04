@@ -123,8 +123,10 @@ S-down = "copy_selection_on_next_line" # Create a new cursor below the current o
 S-c = "no_op" # Disable default create cursor down behavior
 
 [keys.normal.space]
-x = ":buffer-close"  # Close current buffer 
-X = ":buffer-close!" # Force buffer close (sometime new buffers can be anoying)
+f = "file_picker_in_current_directory" # Swap the two
+F = "file_picker"                      # Swap the two
+x = ":buffer-close"                    # Close current buffer 
+X = ":buffer-close!"                   # Force buffer close (sometime new buffers can be anoying)
 # space = "keep_primary_selection" # ?
 s = "no_op"               # Disable default symbol_picker bind
 up = "jump_view_up"       # Quick window swap #2
