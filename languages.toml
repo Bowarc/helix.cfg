@@ -116,3 +116,20 @@ command = "pylint"
 # (optional) npm config set prefix "$HOME/.npm/node_modules"
 # npm i -g vscode-langservers-extracted
 # <Add the node_module path to $PATH
+[[language]]
+name = "css"
+auto-format = false
+
+
+######################################## 
+######################################## 
+####            MARKDOWN            #### 
+######################################## 
+########################################
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "mdpls"]
+
+[language-server.mdpls]
+command = "mdpls"
+config = { markdown.preview.auto = true }
