@@ -156,7 +156,7 @@ l = { s = ":run-shell-command eza -Tls type --git-ignore --git --color never", r
 [keys.normal.space.'w']
 j = "no_op"
 # h = "no_op"
-h = ":vsplit-new"
+h = ":hsplit-new"
 
 [keys.insert]
 
