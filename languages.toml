@@ -120,6 +120,17 @@ command = "pylint"
 name = "css"
 auto-format = false
 
+######################################### 
+######################################### 
+####               HTML              #### 
+######################################### 
+#########################################
+[[language]]
+name = "html"
+auto-format = false
+language-servers = ["vscode-html-language-server"]
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
 
 ######################################## 
 ######################################## 
@@ -133,3 +144,22 @@ language-servers = ["marksman", "mdpls"]
 [language-server.mdpls]
 command = "mdpls"
 config = { markdown.preview.auto = true }
+
+
+######################################## 
+######################################## 
+####           TYPESCRIPT           #### 
+######################################## 
+########################################
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+indent = { tab-width = 4, unit = " " }
+
+# Needs to be different than typescript else html raise parse errors if we use file-types = ["ts", "tsx"] on ts ^
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+indent = { tab-width = 4, unit = " " }
