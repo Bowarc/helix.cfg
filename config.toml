@@ -16,9 +16,6 @@ end-of-line-diagnostics = "hint"
 [editor.auto-save]
 focus-lost = true # Save on focus lost my beloved
 
-[editor.indent-guides]
-render = true
-
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -27,20 +24,23 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[editor.soft-wrap]
-enable = true
-max-wrap = 25
-max-indent-retain = 30
-wrap-indicator = "↪"
+[editor.gutters]
+layout = ["line-numbers", "diff"]
 
-[editor.lsp]
-display-inlay-hints = true
-display-messages = true
+[editor.gutters.line-numbers]
+min-width = 0
+
+[editor.indent-guides]
+render = true
 
 [editor.inline-diagnostics]
 cursor-line = "info" # show warnings and errors on the cursorline inline
 other-lines = "info"
 prefix-len = 1
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
 
 [editor.statusline]
 center = []
@@ -57,6 +57,13 @@ left = ["mode", "spinner", "workspace-diagnostics", "diagnostics", "file-name"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+max-indent-retain = 30
+wrap-indicator = "↪"
+
 
 ######################################### 
 ######################################### 
