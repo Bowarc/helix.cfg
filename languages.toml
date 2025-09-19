@@ -39,7 +39,7 @@ granularity = { enforce = true, group = "crate" }
 ######################################### 
 # https://blog.katona.me/2025/01/12/Adding-crates-io-version-check-to-Helix-editor/
 #
-# cargo install --git https://github.com/MathiasPius/crates-lsp.git --rev 53fb3b8d58c43ea799fdbc1fd28fa5db3f01b01a
+# cargo install --git https://github.com/Bowarc/crates-lsp.git --rev 28cce5179af35e810f0750fd8d8b353f22979ac3
 # cp -r /usr/<lib or lib64>/helix/runtime/queries/toml ~/.config/helix/runtime/queries/crates
 [[language]]
 name = "crates"
