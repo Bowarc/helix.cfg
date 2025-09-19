@@ -1,25 +1,25 @@
 theme = "ayu_dark" # gruvbox_dark_hard, molokai, term16_dark, voxed, ayu_dark
 
 [editor]
-line-number = "relative"
-mouse = false
 bufferline = "multiple"
-cursorline = true
-rulers = [120]
-true-color = true
 color-modes = true
-shell = ["fish", "--no-config", "-c"]
-idle-timeout = 0
+cursorline = true
 default-line-ending = 'lf'
 end-of-line-diagnostics = "hint"
+idle-timeout = 0
+line-number = "relative"
+mouse = false
+rulers = [120]
+shell = ["fish", "--no-config", "-c"]
+true-color = true
 
 [editor.auto-save]
 focus-lost = true # Save on focus lost my beloved
 
 [editor.cursor-shape]
 insert = "bar"
-normal = "block"
 select = "underline"
+normal = "block"
 
 [editor.file-picker]
 hidden = false
@@ -43,17 +43,24 @@ display-inlay-hints = true
 display-messages = true
 
 [editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "workspace-diagnostics",
+  "diagnostics",
+  "file-name",
+  "file-modification-indicator",
+]
 center = []
 right = [
-  "primary-selection-length",
+  # "primary-selection-length",
+  "file-encoding",
+  "file-type",
+  "file-line-ending",
   "position",
   "position-percentage",
-  "file-encoding",
-  "file-line-ending",
-  "file-type",
 ]
-separator = "│"
-left = ["mode", "spinner", "workspace-diagnostics", "diagnostics", "file-name"]
+separator = "|"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -166,7 +173,6 @@ j = "no_op"
 h = ":hsplit-new"
 
 [keys.insert]
-
 # 
 # Global
 # 
@@ -213,7 +219,6 @@ C-S-ret = [
 
 
 [keys.select]
-
 # 
 # Global
 # 
