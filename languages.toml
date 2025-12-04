@@ -115,7 +115,7 @@ command = "pylint"
 #########################################
 # (optional) npm config set prefix "$HOME/.npm/node_modules"
 # npm i -g vscode-langservers-extracted
-# <Add the node_module path to $PATH
+# <Add the node_module path to $PATH>
 [[language]]
 name = "css"
 auto-format = false
@@ -163,3 +163,26 @@ name = "tsx"
 language-servers = ["typescript-language-server"]
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
 indent = { tab-width = 4, unit = " " }
+
+
+######################################### 
+######################################### 
+####               ZIG               #### 
+######################################### 
+#########################################
+# https://github.com/zigtools/zls#
+# 
+[[language]]
+name = "zig"
+language-servers = ["zls"]
+auto-format = false
+indent = { tab-width = 4, unit = " " }
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+'|' = '|'
