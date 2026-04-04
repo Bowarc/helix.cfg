@@ -84,6 +84,9 @@ wrap-indicator = "↪"
 # 
 "F1" = "toggle_line_comments" # Sublime text keybinds im used to
 "F2" = ":format" # Sublime text keybinds im used to
+"F3" = [
+  ":toggle inline-diagnostics.max-diagnostics 10 0",
+] # Enable or disable lsp's diagnostics 
 C-s = ":write"
 C-c = [":clipboard-yank", "yank"] # Copy to yank & system clipboard
 C-x = [
@@ -137,10 +140,12 @@ S-down = "copy_selection_on_next_line" # Create a new cursor below the current o
 S-c = "no_op" # Disable default create cursor down behavior
 
 [keys.normal.space]
-f = "file_picker_in_current_directory" # Swap the two
-F = "file_picker"                      # Swap the two
-x = ":buffer-close"                    # Close current buffer 
-X = ":buffer-close!"                   # Force buffer close (sometime new buffers can be anoying)
+f = "file_picker_in_current_directory"   # Swap the two
+F = "file_picker"                        # Swap the two
+e = "file_explorer_in_current_directory" # Swap the two
+E = "file_explorer"                      # Swap the two
+x = ":buffer-close"                      # Close current buffer 
+X = ":buffer-close!"                     # Force buffer close (sometime new buffers can be anoying)
 # space = "keep_primary_selection" # ?
 s = "no_op"               # Disable default symbol_picker bind
 up = "jump_view_up"       # Quick window swap #2
