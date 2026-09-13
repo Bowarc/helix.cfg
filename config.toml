@@ -87,6 +87,7 @@ wrap-indicator = "↪"
 "F3" = [
   ":toggle inline-diagnostics.max-diagnostics 10 0",
 ] # Enable or disable lsp's diagnostics 
+"F4" = [":toggle lsp.display-inlay-hints"] # Toggle on-off type hints
 C-s = ":write"
 C-c = [":clipboard-yank", "yank"] # Copy to yank & system clipboard
 C-x = [
